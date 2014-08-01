@@ -7,9 +7,11 @@
     {
         public void Configuration(IAppBuilder appBuilder)
         {
-            var HttpConfiguration = new HttpConfiguration();
+            var httpConfiguration = new HttpConfiguration();
 
-            appBuilder.UseWebApi(HttpConfiguration);
+            httpConfiguration.Routes.MapHttpRoute("DefaultApi", "api/{controller}/{id}", new { id = RouteParameter.Optional });
+
+            appBuilder.UseWebApi(httpConfiguration);
         }
     }
 }
