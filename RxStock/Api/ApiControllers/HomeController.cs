@@ -5,13 +5,13 @@
 
     public class HomeController : ApiController
     {
-        public IList<string> Get()
+        public IList<int> Get()
         {
-            return new List<string>
+            return new List<int>
             {
-                "1",
-                "2",
-                "3"
+                1,
+                2,
+                3
             };
         }
     }
