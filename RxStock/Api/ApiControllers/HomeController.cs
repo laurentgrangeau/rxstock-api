@@ -1,5 +1,6 @@
 ﻿namespace Api.ApiControllers
 {
+    using System;
     using System.Collections.Generic;
     using System.Web.Http;
 
@@ -7,12 +8,16 @@
     {
         public IList<int> Get()
         {
-            return new List<int>
+            var result = new List<int>();
+            var random = new Random();
+            var array = random.Next();
+
+            for (int i = 0; i < array; i++)
             {
-                1,
-                2,
-                3
-            };
+                result.Add(random.Next());
+            }
+
+            return result;
         }
     }
 }
